@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
+from io import StringIO
 
 # Menu de navigation
 page = st.sidebar.selectbox("Sélectionnez une étape", ["1. Importation des données", "2. Traitement des données",
@@ -25,7 +26,7 @@ if page == "1. Importation des données":
             response.raise_for_status()
 
             # Lire le fichier CSV à partir de la réponse
-            df = pd.read_csv(pd.compat.StringIO(response.text))
+            df = pd.read_csv(StringIO(response.text))
             st.success("Fichier CSV chargé avec succès !")
             st.write("Aperçu des 10 premières lignes :", df.head())
             st.write("Résumé des données :", df.describe())
@@ -78,8 +79,8 @@ elif page == "6. Enregistrement des résultats":
 st.markdown("""
     <hr>
     <footer style="text-align:center;">
-        <p>© 2025 Nom de l'application - Tous droits réservés.</p>
-        <p>Développé par [Votre Nom ou Organisation]</p>
-        <p><a href="mailto:contact@votreemail.com">Contactez-nous</a></p>
+        <p>© 2025 Scoring de Credit Apk- Tous droits réservés.</p>
+        <p>Développé par Jean Pierre ABBE</p>
+        <p><a href="mailto: abbejeanpierre0808@gmail.com">Contactez-nous</a></p>
     </footer>
     """, unsafe_allow_html=True)
