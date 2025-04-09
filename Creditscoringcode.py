@@ -93,5 +93,4 @@ elif page == "Enregistrement des résultats":
 st.sidebar.markdown("---")
 st.sidebar.markdown("📌 **Auteur :** ABBE Jean Pierre")
 st.sidebar.markdown("📞 **Téléphone :** +225 0749499034")
-st.sidebar.markdown("📧 **Email :** contact@example.com")
-st.sidebar.info("👈 Sélectionnez une section pour explorer les données !")
+st.sidebar.markdown("📧 **Email :** abbejeanpierre0808@gmail.com")
