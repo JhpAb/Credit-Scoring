@@ -14,17 +14,17 @@ except Exception as e:
     df = pd.DataFrame()
 
 # 🏷️ Titre principal du dashboard
-st.title("Credit Scoring Apk 💳")
+st.title("💰 Credit Scoring Apk")
 
 # 📚 Menu de navigation dans la barre latérale
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Aller à", [
-    "Aperçu des données",
-    "Résumé des données",
-    "Traitement des données",
-    "Modèle de régression logistique",
-    "Scoring des clients",
-    "Enregistrement des résultats"
+    "🔍Aperçu des données",
+    "📍Résumé des données",
+    "📊Traitement des données",
+    "🎯Modèle de régression logistique",
+    "💳Scoring des clients",
+    "🗂Enregistrement des résultats"
 ])
 
 # ============================
