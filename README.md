@@ -1,9 +1,9 @@
 ## Credit Scoring Apk
 ---
-# 📝 Description
+**📝 Description**
 L'application **Credit Scoring Apk** permet de prédire le risque de crédit des clients en utilisant un modèle de **régression logistique**. Les utilisateurs peuvent explorer des données financières, effectuer un traitement des données, construire un modèle prédictif, et obtenir des scores de crédit personnalisés pour chaque client. Cette application est particulièrement utile pour les institutions financières ou les entreprises souhaitant évaluer la solvabilité de leurs clients.
 
-# ⚙️ Fonctionnalités
+**⚙️ Fonctionnalités**
 - **Aperçu des données** : Visualiser les premières lignes du dataset.
 - **Résumé des données** : Statistiques descriptives et informations détaillées sur le dataset.
 - **Traitement des données** : Identification des valeurs manquantes, nettoyage des données et génération de boxplots.
@@ -11,7 +11,7 @@ L'application **Credit Scoring Apk** permet de prédire le risque de crédit des
 - **Scoring des clients** : Calcul des scores de crédit basés sur les variables sélectionnées et prédictions du modèle.
 - **Enregistrement des résultats** : Téléchargement des résultats de scoring sous forme de fichier CSV.
 
-# 📦 Prérequis
+**📦 Prérequis**
 - Python 3.x
 - Streamlit
 - Pandas
@@ -20,7 +20,7 @@ L'application **Credit Scoring Apk** permet de prédire le risque de crédit des
 - Matplotlib
 - Seaborn
 
-# 🔧 Installation
+**🔧 Installation**
 
 1. Clonez ce dépôt :
 
@@ -72,8 +72,8 @@ Le modèle utilise la régression logistique pour prédire le risque de crédit 
 5. Créez une nouvelle pull request.
 
 
---
-## 📬 Contact
+---
+**📬 Contact**
 
 Auteur : Jean Pierre ABBE
 
