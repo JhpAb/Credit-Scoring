@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-
-# 📦 Importation des bibliothèques nécessaires
+from io import StringIO
 
 # 🔗 Liens vers les fichiers CSV hébergés en ligne (GitHub)
 url = "https://raw.githubusercontent.com/JhpAb/Credit-Scoring/main/DATABASE/credit_risk_dataset.csv"
@@ -43,7 +42,12 @@ elif page == "Résumé des données":
     st.header("Résumé des données")
     if not df.empty:
         st.write(df.describe())
-        st.write("Structure des données :", df.info())
+        
+        # Rediriger la sortie de df.info() vers StringIO et afficher dans Streamlit
+        buffer = StringIO()
+        df.info(buf=buffer)
+        s = buffer.getvalue()
+        st.text(s)  # Afficher le texte dans l'interface Streamlit
     else:
         st.warning("Les données n'ont pas pu être chargées.")
 
@@ -83,7 +87,6 @@ elif page == "Enregistrement des résultats":
         st.download_button("Télécharger le fichier", df.to_csv(), file_name="resultats_clients.csv", mime="text/csv")
     else:
         st.warning("Les données n'ont pas pu être chargées.")
-
 # ========================
 # 👤 Pied de page - Auteurs
 # ========================
