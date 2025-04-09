@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 from io import StringIO
+import re
 
 # Menu de navigation
 page = st.sidebar.selectbox("Sélectionnez une étape", ["1. Importation des données", "2. Traitement des données",
@@ -17,20 +18,24 @@ if page == "1. Importation des données":
 
     if drive_link:
         try:
-            # Extraire l'ID du fichier à partir du lien de partage
-            file_id = drive_link.split('/d/')[1].split('/view')[0]
-            download_url = f"https://drive.google.com/uc?export=download&id={file_id}"
+            # Utiliser une expression régulière pour extraire l'ID du fichier
+            file_id_match = re.search(r'/d/([a-zA-Z0-9_-]+)', drive_link)
+            if file_id_match:
+                file_id = file_id_match.group(1)
+                download_url = f"https://drive.google.com/uc?export=download&id={file_id}"
 
-            # Télécharger le fichier CSV
-            response = requests.get(download_url)
-            response.raise_for_status()
+                # Télécharger le fichier CSV
+                response = requests.get(download_url)
+                response.raise_for_status()
 
-            # Lire le fichier CSV à partir de la réponse
-            df = pd.read_csv(StringIO(response.text))
-            st.success("Fichier CSV chargé avec succès !")
-            st.write("Aperçu des 10 premières lignes :", df.head())
-            st.write("Résumé des données :", df.describe())
-            st.write("Structure des données :", df.info())
+                # Lire le fichier CSV à partir de la réponse
+                df = pd.read_csv(StringIO(response.text), on_bad_lines='warn')
+                st.success("Fichier CSV chargé avec succès !")
+                st.write("Aperçu des 10 premières lignes :", df.head())
+                st.write("Résumé des données :", df.describe())
+                st.write("Structure des données :", df.info())
+            else:
+                st.error("Lien Google Drive invalide. Veuillez fournir un lien de partage valide.")
 
         except Exception as e:
             st.error(f"Erreur lors du chargement du fichier : {e}")
@@ -79,9 +84,8 @@ elif page == "6. Enregistrement des résultats":
 st.markdown("""
     <hr>
     <footer style="text-align:center;">
-        <p>© 2025 Nom de l'application - Tous droits réservés.</p>
-        <p>Développé par Jean Pierre ABBE </p>
-        <p><a href="mailto:abbejeanpierre0808@gmail.com">Contactez-nous</a></p>
+        <p>© 2025 Scoring Credit Apk- Tous droits réservés.</p>
+        <p>Développé par Jean Pierre ABBE</p>
+        <p><a href="mailto: abbejeanpierre0808@gmail.com">Contactez-nous</a></p>
     </footer>
     """, unsafe_allow_html=True)
-      
