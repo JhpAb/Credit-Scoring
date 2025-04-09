@@ -14,7 +14,7 @@ except Exception as e:
     df = pd.DataFrame()
 
 # 🏷️ Titre principal du dashboard
-st.title("💳 Credit Scoring Apk")
+st.title("Credit Scoring Apk 💳")
 
 # 📚 Menu de navigation dans la barre latérale
 st.sidebar.title("Navigation")
