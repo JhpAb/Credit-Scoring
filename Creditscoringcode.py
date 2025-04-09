@@ -4,7 +4,7 @@ import pandas as pd
 # 📦 Importation des bibliothèques nécessaires
 
 # 🔗 Liens vers les fichiers CSV hébergés en ligne (GitHub)
-url = "https://raw.githubusercontent.com/JhpAb/Credit-Scoring/main/DATABASE/credit_scoring_dataset.csv"
+url = "https://raw.githubusercontent.com/JhpAb/Credit-Scoring/main/DATABASE/credit_risk_dataset.csv"
 
 # 📥 Chargement du 1er fichier CSV : Données de publications
 try:
