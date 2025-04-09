@@ -1,5 +1,5 @@
 ## Credit Scoring Apk
---
+---
 # 📝 Description
 L'application **Credit Scoring Apk** permet de prédire le risque de crédit des clients en utilisant un modèle de **régression logistique**. Les utilisateurs peuvent explorer des données financières, effectuer un traitement des données, construire un modèle prédictif, et obtenir des scores de crédit personnalisés pour chaque client. Cette application est particulièrement utile pour les institutions financières ou les entreprises souhaitant évaluer la solvabilité de leurs clients.
 
